@@ -1,10 +1,32 @@
 # The Temporal Score Database
 
 ## What is the temporal score database?
-The temporal score database is a python script that pulls data from NVD, MITRE, EPSS, Nuclei, ExploitDB, Github, and Metasploit to enrich CVSS data. The database provides a daily .xlsx file which pulls from the aforementioned sources, and calculates the temporal vector, score, and severity for all CVEs published by NVD or MITRE. This can be used as part of the vulnerability decision tree.
+The temporal score database is a python script that pulls data from NVD, MITRE, EPSS, Nuclei, ExploitDB, Github, and Metasploit to enrich CVSS data. The database provides a daily .xlsx file which pulls from the aforementioned sources, and calculates the temporal vector, score, and severity for all CVEs published by NVD or MITRE. The main aim is to provide intelligence and clarity for all security professionals to sort through the constant noise of vulnerability disclosures. This can be used as part of the vulnerability decision tree.
 
 > [!NOTE]
 > Check out the vulnerability decision tree if the temporal score database is useful
+
+## How is everything calculated?
+*Please keep in mind that the database is by no means a silver bullet. The point of this database is to sort through the noise by automating temporal score calculations, but it is by no means complete or perfect.*
+ 
+ Exploit code maturity (E:) is calculated in the following manner. 
+ - Unproven (U): No sources are flagging for exploit code. 
+ - Proof of Concept (P): Shows as on any of the following vuln sources: 
+ nuclei, exploitdb, kev, github repo 
+ - Functional (F): Shows on metasploit OR a combination of any of the two (github, 
+ nuclei, exploitdb, kev) OR if it is associated with ransomware via KEV 
+ - High(H): Two requirements or more for Functional is satisfied
+ 
+ Remediation Level (RL) is calculated in the following manner.
+ - Unavailable (U): No hyperlink is provided
+ - Temporary Fix (T): NVD provides a hyperlink - most vulnerabilities that warrant an article usually have
+ some sort of workaround provided by the product owner
+ - Official Fix (O): NVD provides a hyperlink with a tag labeled as "patch"
+ 
+ Report Confidence is calculated in the following manner.
+ - Unknown (U): MITRE or NVD mark CVE as "REJECTED"
+ - Reasonable (R): MITRE or NVD mark CVE as "Received", "Awaiting Analysis", or "Undergoing Analysis"
+ - Confirmed (C): MITRE or NVD mark CVE as "Anaylzed", "Published", or "Modified"
 
 ## Great! Can I use it? Do I have to edit it in any way?
 This is an opensourced passion project - please feel free to use it in any capacity. NOTE: You will have to add in your AWS account number, S3 bucket name, etc, if you would like to use the code to its full capacity. If you would like to see specifically what information is included, check out the web app. Please keep in mind that this web app was only made to showcase the information that is possible to be pulled by this script:
