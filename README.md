@@ -4,7 +4,7 @@
 The temporal score database is a python script that pulls data from NVD, MITRE, EPSS, Nuclei, ExploitDB, Github, and Metasploit to enrich CVSS data. The database provides a daily .xlsx file which pulls from the aforementioned sources, and calculates the temporal vector, score, and severity for all CVEs published by NVD or MITRE. The main aim is to provide intelligence and clarity for all security professionals to sort through the constant noise of vulnerability disclosures. This can be used as part of the vulnerability decision tree.
 
 > [!NOTE]
-> Check out the vulnerability decision tree if the temporal score database is useful
+> Check out the [vulnerability decision tree](https://github.com/mmmporkbelly/vulnerability_decision_tree/blob/main/README.md) if the temporal score database is useful
 
 ## Does it actually have an impact?
 Yes! If you agree with the calculation method (see below), the web app shows the before and after in calculations for all CVEs that are published. As of 6/13/24, here is the breakdown by the numbers:
