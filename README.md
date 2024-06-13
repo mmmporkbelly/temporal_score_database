@@ -6,6 +6,13 @@ The temporal score database is a python script that pulls data from NVD, MITRE, 
 > [!NOTE]
 > Check out the vulnerability decision tree if the temporal score database is useful
 
+## Does it actually have an impact?
+Yes! If you agree with the calculation method (see below), the web app shows the before and after in calculations for all CVEs that are published. As of 6/13/24, here is the breakdown by the numbers:
+Critical Severity CVEs - 24074 Criticals to 2047 Criticals (91.5% reduction)
+High Severity CVEs - 96294 Highs to 61256 Highs (26.4% reduction)
+Medium Severity CVEs - 105458 Mediums to 135332 Mediums (28.3% increase)
+Low Severity CVEs - 8649 Lows to 35786 Lows (313.8% increase)
+
 ## How is everything calculated?
 *Please keep in mind that the database is by no means a silver bullet. The point of this database is to sort through the noise by automating temporal score calculations, but it is by no means complete or perfect.*
  
