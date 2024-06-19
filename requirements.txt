@@ -1,0 +1,10 @@
+boto3==1.34.119
+botocore==1.34.119
+cvss==3.1
+numpy==1.26.4
+openpyxl==3.1.3
+pandas==2.2.2
+python-dotenv==1.0.1
+Requests==2.32.3
+tqdm==4.66.4
+xlsxwriter==3.2.0
