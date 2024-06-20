@@ -5,6 +5,7 @@ The temporal score database is a python script that pulls data from NVD, MITRE, 
 
 > [!NOTE]
 > Check out the [vulnerability decision tree](https://github.com/mmmporkbelly/vulnerability_decision_tree/blob/main/README.md) if the temporal score database is useful
+> Also check out the [temporal score database web application](https://temporalscoredatabase.com/) to see the information that can be pulled by the script. Please keep in mind that this web app was only made to present the information that can be pulled in a UI - it is not a robust web app.
 
 ## Does it actually have an impact?
 Yes! If you agree with the calculation method (see below), the web app shows the before and after in calculations for all CVEs that are published. As of 6/13/24, here is the breakdown by the numbers:
@@ -37,7 +38,7 @@ Yes! If you agree with the calculation method (see below), the web app shows the
  - Confirmed (C): MITRE or NVD mark CVE as "Anaylzed", "Published", or "Modified"
 
 ## Great! Can I use it? Do I have to edit it in any way?
-This is an opensourced passion project - please feel free to use it in any capacity. NOTE: You will have to add in your AWS account number, S3 bucket name, etc, if you would like to use the code to its full capacity. If you would like to see specifically what information is included, check out the web app. Please keep in mind that this web app was only made to showcase the information that is possible to be pulled by this script:
+This is an opensourced passion project - please feel free to use it in any capacity. NOTE: You will have to add in your AWS account number, S3 bucket name, etc, if you would like to use the code to its full capacity. If you would like to see specifically what information is included, check out the web app. Please keep in mind that this web app was only made to showcase the information that is possible to be pulled by this script.
 
 
 ## How can I view the data?
